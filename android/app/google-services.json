@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "667133118764",
+    "project_id": "snapsticker-9c910",
+    "storage_bucket": "snapsticker-9c910.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667133118764:android:895b5684bddc076b368489",
+        "android_client_info": {
+          "package_name": "com.sazid.snapsticker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667133118764-db12tj0gbho29h8i70o5vmknr9kd3is8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sazid.snapsticker",
+            "certificate_hash": "e315d1ac3eb89bd59891b2ff2a4e67c672c64580"
+          }
+        },
+        {
+          "client_id": "667133118764-5p2jo899r1i4u3b2a97ppbvps0ace170.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiwstjvSpHuwVJAK9cPbf3LjuLOpM1zjk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667133118764-5p2jo899r1i4u3b2a97ppbvps0ace170.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "667133118764-8739jncseec4584fh80u8n1tgcil0rd3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sazid.snapsticker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
