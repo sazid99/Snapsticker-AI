@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: CircleAvatar(),
+          child: CircleAvatar(child: Icon(Icons.person_outline)),
         ),
         title: Column(
           crossAxisAlignment: .start,

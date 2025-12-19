@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapsticker/features/auth/services/auth_services.dart';
+import 'package:snapsticker/features/main_navigation/views/main_nav_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -65,7 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 onPressed: () async {
                   final user = await authServices.signInWithGoogle();
                   if (user != null) {
-                    Navigator.pushReplacementNamed(context, '/main-nav-screen');
+                    Get.to(MainNavScreen());
                   }
                 },
                 child: Row(
