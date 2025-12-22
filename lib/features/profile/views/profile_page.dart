@@ -1,19 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:snapsticker/features/settings/views/settings_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:snapsticker/core/providers/firebase_providers.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends ConsumerWidget {
   const ProfilePage({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-  final user = FirebaseAuth.instance.currentUser;
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(firebaseAuthProvider).currentUser;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -24,14 +19,14 @@ class _ProfilePageState extends State<ProfilePage> {
           crossAxisAlignment: .start,
           children: [
             Text(user!.displayName.toString(), style: TextStyle(fontSize: 16)),
-            Text(user!.email.toString(), style: TextStyle(fontSize: 12)),
+            Text(user.email.toString(), style: TextStyle(fontSize: 12)),
           ],
         ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.share_outlined)),
           IconButton(
             onPressed: () {
-              Get.to(SettingsPage());
+              context.push('/settings-screen');
             },
             icon: Icon(Icons.settings_outlined),
           ),

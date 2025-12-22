@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:snapsticker/features/ai/features/ai_main_navigation/views/pages/ai_main_nav_screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:snapsticker/features/explore/views/explore_page.dart';
 import 'package:snapsticker/features/profile/views/profile_page.dart';
 import 'package:snapsticker/features/stickers/views/sticker_page.dart';
@@ -55,7 +54,7 @@ class _MainNavScreenState extends State<MainNavScreen>
   Widget _buildPortalFab() {
     return InkResponse(
       onTap: () {
-        Get.to(AiMainNavScreen());
+        context.push('/ai-menu');
       },
       radius: 40,
       child: Stack(

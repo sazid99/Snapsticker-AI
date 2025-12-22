@@ -12,32 +12,29 @@ class AiMainNavScreen extends StatefulWidget {
 class _AiMainNavScreenState extends State<AiMainNavScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      bottom: true,
-      child: Scaffold(
-        //note: appbar
-        appBar: AppBar(
-          title: Text(
-            'Snapsticker',
-            style: TextStyle(
-              color: Colors.greenAccent,
-              fontWeight: FontWeight.bold,
-            ),
+    return Scaffold(
+      extendBody: true,
+      //note: appbar
+      appBar: AppBar(
+        title: Text(
+          'Snapsticker',
+          style: TextStyle(
+            color: Colors.greenAccent,
+            fontWeight: FontWeight.bold,
           ),
-          centerTitle: true,
-          actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.new_label_outlined)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert_outlined)),
-          ],
         ),
-        //note: drawer
-        drawer: Drawer(),
-        //note: body
-        body: AIMainNavBodyPages(),
-        //note: bottom sheet input field  input field
-        bottomSheet: DynamicInputField(),
+        centerTitle: true,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.new_label_outlined)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.more_vert_outlined)),
+        ],
       ),
+      //note: drawer
+      drawer: Drawer(),
+      //note: body
+      body: AIMainNavBodyPages(),
+      //note: bottom sheet input field  input field
+      bottomSheet: DynamicInputField(),
     );
   }
 }

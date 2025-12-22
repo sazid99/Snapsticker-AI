@@ -1,19 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:snapsticker/features/auth/viewModels/auth_async_notifier.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.back();
+            context.pop();
           },
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
@@ -33,7 +34,7 @@ class SettingsPage extends StatelessWidget {
           Divider(thickness: 0.5),
           ListTile(
             onTap: () {
-              buildShowDialog(context);
+              buildShowDialog(context, ref);
             },
             title: Text('Log Out'),
             trailing: Icon(Icons.logout_outlined),
@@ -45,7 +46,7 @@ class SettingsPage extends StatelessWidget {
   }
 
   //note: custom show dialog method
-  Future<dynamic> buildShowDialog(BuildContext context) {
+  Future<dynamic> buildShowDialog(BuildContext context, WidgetRef ref) {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -62,10 +63,8 @@ class SettingsPage extends StatelessWidget {
                 'You saved your credentials, so logging back in will be easy.',
               ),
               ElevatedButton(
-                onPressed: () async {
-                  await FirebaseAuth.instance.signOut();
-                  await GoogleSignIn.instance.signOut();
-                  Get.until((route) => route.isFirst);
+                onPressed: () {
+                  ref.read(authAsyncProvider.notifier).logOut();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
@@ -75,7 +74,7 @@ class SettingsPage extends StatelessWidget {
               ),
               OutlinedButton(
                 onPressed: () {
-                  Get.back();
+                  context.pop();
                 },
                 child: Text('Cancel'),
               ),
