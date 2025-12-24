@@ -1,16 +1,12 @@
 # snapsticker
 
-A new app to take snap and make sticker with AI.
+An app developed by Flutter to take snap and make sticker with AI.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tools, Packages, Plugin used in this app:-
+0. App Architecture: Feature based MVVM
+1. Programming Language: Dart
+2. Framework tool: Flutter
+3. State Management: Riverpod
+4. Navigation & Routing: Go router
+5. API integration: Dio
+6. Backend as a service(Auth): Firebase
