@@ -1,4 +1,4 @@
-# snapsticker
+# Snapsticker AI
 
 An app developed by Flutter to take snap and make sticker with AI.
 
