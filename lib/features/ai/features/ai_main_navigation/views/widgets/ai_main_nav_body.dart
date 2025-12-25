@@ -18,6 +18,10 @@ class AIMainNavBodyPages extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(color: Colors.blueGrey),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: SizedBox(
                 height: 200,
                 width: double.maxFinite,
@@ -44,8 +48,13 @@ class AIMainNavBodyPages extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
-                itemBuilder: (context, index) =>
-                    Card(child: SizedBox(height: 200, width: 125)),
+                itemBuilder: (context, index) => Card(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.blueGrey),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(height: 200, width: 125),
+                ),
               ),
             ),
             //note: your stickers
@@ -59,8 +68,13 @@ class AIMainNavBodyPages extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 5,
-                itemBuilder: (context, index) =>
-                    Card(child: SizedBox(height: 125, width: 125)),
+                itemBuilder: (context, index) => Card(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.blueGrey),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: SizedBox(height: 125, width: 125),
+                ),
               ),
             ),
           ],
